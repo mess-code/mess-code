@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Transition } from '@headlessui/react';
 import HomeNavigation from '../components/HomeNavigation';
 import HomeHeader from '../components/HomeHeader';
+import HomeAbout from '../components/HomeAbout';
 
 const Home: React.FunctionComponent = () => {
   const home = useRef(null);
@@ -19,13 +20,6 @@ const Home: React.FunctionComponent = () => {
     { href: '#contact', name: 'Contact', icon: 'uil-message', ref: contact },
   ];
 
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-    console.log('run loaded');
-  }, []);
-
   return (
     <>
       <main>
@@ -37,7 +31,10 @@ const Home: React.FunctionComponent = () => {
           <HomeHeader nextHref="#about" nextRef={about} />
         </section>
 
-        <div className="bg-blue-300 h-96" ref={about}></div>
+        <section ref={about}>
+          <HomeAbout />
+        </section>
+
         <div className="bg-red-300 h-96" ref={skills}></div>
         <div className="bg-green-300 h-96" ref={services}></div>
       </main>

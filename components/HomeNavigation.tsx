@@ -1,5 +1,6 @@
 import React, { MutableRefObject, useEffect, useState } from 'react';
 import { Popover, Transition } from "@headlessui/react";
+import Link from 'next/link';
 
 export interface NavItem {
   icon: string;
@@ -57,11 +58,15 @@ const HomeNavigation: React.FunctionComponent<HomeNavigationProps> = ({ navItems
 
   return (
     <nav className={`fixed w-full bg-white transition-all duration-300 bottom-0 lg:top-0 lg:bottom-auto z-40 ${onTop ? '' : 'shadow'}`}>
-      <div className="lg:container mx-auto flex justify-between items-center lg:px-5 lg:py-3 px-4 py-1 font-medium">
-        <div className="flex items-center hover:text-indigo-700 transition-all">
-          <i className="uil uil-arrow lg:text-4xl text-2xl" />
-          <span className="ml-2 lg:text-base text-sm">MessCode</span>
-        </div>
+      <div className="lg:container mx-auto flex justify-between items-center lg:py-3 px-4 py-1 font-medium">
+        <Link href="/" passHref={true}>
+          <a>
+            <div className="flex items-center hover:text-indigo-700 transition-all">
+              <i className="uil uil-arrow lg:text-4xl text-2xl" />
+              <span className="ml-2 lg:text-base text-sm">MessCode</span>
+            </div>
+          </a>
+        </Link>
 
         {/** Right nav in desktop */}
         <div className="items-center lg:flex hidden">
