@@ -1,5 +1,6 @@
 import React, { MutableRefObject } from 'react';
 import { Transition } from '@headlessui/react'
+import PrimaryButton from './PrimaryButton';
 
 export interface HomeHeaderProps {
   nextHref?: string;
@@ -14,20 +15,22 @@ const HomeHeader: React.FunctionComponent<HomeHeaderProps> = ({ nextHref, nextRe
   }
 
   return (
-    <div className="bg-white lg:container mx-auto lg:px-5 px-4 sm:pb-0 pb-16 h-screen">
-      <div className="flex flex-wrap justify-between items-center"
+    <div className="bg-white lg:container mx-auto px-4 sm:pb-0 pb-16 h-screen">
+      <div className="flex flex-wrap justify-between items-center content-center"
         style={{ height: 'calc(100vh - 5rem)' }}>
         {/** Contact icons */}
         <div className="w-1/12 text-indigo-700">
-          <a className="block"
+          <a className="inline-block"
             href="https://google.com" target="_blank" rel="noopener noreferrer">
             <i className="uil uil-linkedin-alt text-2xl" />
           </a>
-          <a className="block mt-4"
+          <br />
+          <a className="inline-block mt-4"
             href="https://google.com" target="_blank" rel="noopener noreferrer">
             <i className="uil uil-github-alt text-2xl" />
           </a>
-          <a className="block mt-4"
+          <br />
+          <a className="inline-block mt-4"
             href="https://google.com" target="_blank" rel="noopener noreferrer">
             <i className="uil uil-facebook-f text-2xl" />
           </a>
@@ -36,16 +39,15 @@ const HomeHeader: React.FunctionComponent<HomeHeaderProps> = ({ nextHref, nextRe
         {/** Title */}
         <div className="lg:w-4/12 sm:w-5/12 w-12/12 sm:order-none order-last">
           <div className="">
-            <h1 className="xl:text-7xl md:text-5xl sm:text-4xl text-4xl font-semibold text-indigo-900">Hi, I&#39;m Hai</h1>
-            <h2 className="xl:text-3xl lg:text-2xl sm:text-xl text-xl font-medium text-gray-400 sm:mt-4 mt-2">Software engineer</h2>
-            <p className="text-gray-400 sm:mt-8 mt-4 lg:text-base text-sm">
+            <h1 className="text-indigo-700">Hi, I&#39;m Hai</h1>
+            <h3 className="font-medium text-gray-500 sm:mt-4 mt-2">Software engineer</h3>
+            <p className="text-gray-500 sm:mt-8 mt-4">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s,
             </p>
 
-            <button className="inline-block sm:px-6 sm:py-4 sm:rounded-2xl sm:text-base px-4 py-3 rounded-lg text-sm text-white bg-indigo-700 sm:mt-12 mt-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400">
-              Contact Me
-              <i className="uil uil-message ml-4 sm:text-xl text-base"></i>
-            </button>
+            <div className="sm:mt-12 mt-8">
+              <PrimaryButton content="Contact Me" icon="uil uil-message" />
+            </div>
           </div>
         </div>
 

@@ -10,10 +10,11 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.3.0",
-    "@iconscout/unicons": "^4.0.0",
     "next": "11.0.1",
     "react": "17.0.2",
+    "react-countup": "^4.3.3",
     "react-dom": "17.0.2",
+    "react-intersection-observer": "^8.32.0",
     "swiper": "^6.7.1"
   },
   "devDependencies": {
